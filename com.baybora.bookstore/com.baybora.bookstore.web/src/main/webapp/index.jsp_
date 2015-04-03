@@ -1,0 +1,3 @@
+MERHABA DÜNYA
+
+<%= application.getMajorVersion() %>.<%= application.getMinorVersion() %>
