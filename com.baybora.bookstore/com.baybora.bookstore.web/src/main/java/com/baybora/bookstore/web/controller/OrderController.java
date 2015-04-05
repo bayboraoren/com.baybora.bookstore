@@ -13,6 +13,8 @@ import org.springframework.binding.message.MessageContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.webflow.action.EventFactorySupport;
+import org.springframework.webflow.execution.Event;
 
 import com.baybora.bookstore.domain.Account;
 import com.baybora.bookstore.domain.Book;
@@ -81,7 +83,7 @@ public class OrderController {
 		return bookstoreService.store(order).getId();
 	}
 
-	/*public Event validateDeliveryDate(OrderForm orderForm, MessageContext messageContext) {
+	public Event validateDeliveryDate(OrderForm orderForm, MessageContext messageContext) {
 		if (orderForm.getDeliveryDate() == null) {
 			MessageBuilder errorMessageBuilder = new MessageBuilder().error();
 			errorMessageBuilder.source("deliveryDate");
@@ -98,7 +100,7 @@ public class OrderController {
 			return new EventFactorySupport().error(this);
 		}
 		return new EventFactorySupport().success(this);
-	}*/
+	}
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {

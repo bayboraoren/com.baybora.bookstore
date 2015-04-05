@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.support.RequestContext;
+import org.springframework.webflow.action.EventFactorySupport;
+import org.springframework.webflow.execution.Event;
+import org.springframework.webflow.mvc.servlet.MvcExternalContext;
 
 import com.baybora.bookstore.domain.Account;
 import com.baybora.bookstore.service.AccountService;
@@ -79,7 +82,7 @@ public class AuthenticationController {
 	}
 
 	// ---- POJO logic
-	/*public Event authenticate(AuthenticationForm authenticationForm, MvcExternalContext externalContext,
+	public Event authenticate(AuthenticationForm authenticationForm, MvcExternalContext externalContext,
 			MessageContext messageContext) {
 		try {
 			authenticate(authenticationForm, ((HttpServletRequest) externalContext.getNativeRequest()).getSession());
@@ -88,7 +91,7 @@ public class AuthenticationController {
 			return new EventFactorySupport().error(this);
 		}
 		return new EventFactorySupport().success(this);
-	}*/
+	}
 
 	// ---- Helpers
 	private void authenticate(AuthenticationForm authenticationForm, HttpSession httpSession)

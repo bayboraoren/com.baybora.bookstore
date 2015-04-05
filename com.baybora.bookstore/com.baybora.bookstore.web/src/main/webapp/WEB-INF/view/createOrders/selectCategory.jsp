@@ -10,7 +10,7 @@
 					<spring:message code="label.page.category"/>
 				</td>
 				<td>
-					<form:select path="category" items="${selectableCategories}" itemLabel="name" itemValue="id"/>
+					<form:select path="category"  items="${selectableCategories}" itemLabel="name" itemValue="id" id="id"/>
 					<form:errors path="category" cssClass="error"/>
 				</td>
 			</tr>

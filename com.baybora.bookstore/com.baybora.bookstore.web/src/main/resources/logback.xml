@@ -17,8 +17,8 @@
     <logger name="org.springframework" level="INFO" />
     <logger name="org.springframework.web" level="TRACE" />
     
-	<logger name="com.apress" level="DEBUG" />
-    <logger name="com.apress.prospringmvc.context" level="WARN" />
+	<logger name="com.baybora" level="DEBUG" />
+    <logger name="com.baybora.bookstore.context" level="WARN" />
     
 
 	<root level="WARN">

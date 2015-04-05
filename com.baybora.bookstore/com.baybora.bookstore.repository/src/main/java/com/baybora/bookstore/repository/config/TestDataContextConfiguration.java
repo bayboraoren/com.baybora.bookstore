@@ -25,7 +25,6 @@ import org.springframework.transaction.support.TransactionTemplate;
  * @author Marten Deinum
  * @author Koen Serneels
  */
-
 @Configuration
 public class TestDataContextConfiguration {
 

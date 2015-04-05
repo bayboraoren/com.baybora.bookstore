@@ -3,7 +3,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
                           http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 	
-	<input name="orderForm" required="true" type="com.apress.prospringmvc.bookstore.web.controller.OrderForm"/>
+	<input name="orderForm" required="true" type="com.baybora.bookstore.web.controller.OrderForm"/>
 	
 	<action-state id="placeOrder">
 		<evaluate expression="orderController.placeOrder(externalContext.sessionMap.authenticatedAccount, flowScope.orderForm)" result="flowScope.orderId"/>

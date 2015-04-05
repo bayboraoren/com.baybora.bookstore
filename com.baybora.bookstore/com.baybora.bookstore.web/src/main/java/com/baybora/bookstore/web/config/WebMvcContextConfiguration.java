@@ -1,11 +1,11 @@
 package com.baybora.bookstore.web.config;
 
-import java.util.Locale.Category;
 
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.js.ajax.AjaxUrlBasedViewResolver;
@@ -25,6 +25,10 @@ import org.springframework.webflow.mvc.view.FlowAjaxTilesView;
 
 import com.baybora.bookstore.common.converter.StringToEntityConverter;
 import com.baybora.bookstore.domain.Book;
+import com.baybora.bookstore.domain.Category;
+import com.baybora.bookstore.repository.config.RepositoryConfiguration;
+import com.baybora.bookstore.repository.config.TestDataContextConfiguration;
+import com.baybora.bookstore.service.config.ServiceConfiguration;
 import com.baybora.bookstore.web.interceptor.CommonDataHandlerInterceptor;
 
 /**
@@ -36,9 +40,7 @@ import com.baybora.bookstore.web.interceptor.CommonDataHandlerInterceptor;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {"com.baybora.bookstore.repository",
-							   "com.baybora.bookstore.service",
-							   "com.baybora.bookstore.web"})
+@ComponentScan(basePackages={"com.baybora.bookstore.web"})
 public class WebMvcContextConfiguration extends WebMvcConfigurerAdapter {
 
 	@Override

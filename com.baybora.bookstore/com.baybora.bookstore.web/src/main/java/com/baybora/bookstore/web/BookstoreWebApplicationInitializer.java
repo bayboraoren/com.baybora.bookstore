@@ -19,8 +19,9 @@ import org.springframework.web.context.request.RequestContextListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 
-import com.baybora.bookstore.repository.config.InfrastructureContextConfiguration;
+import com.baybora.bookstore.repository.config.RepositoryConfiguration;
 import com.baybora.bookstore.repository.config.TestDataContextConfiguration;
+import com.baybora.bookstore.service.config.ServiceConfiguration;
 import com.baybora.bookstore.web.config.WebMvcContextConfiguration;
 import com.baybora.bookstore.web.config.WebflowContextConfiguration;
 
@@ -32,7 +33,7 @@ import com.baybora.bookstore.web.config.WebflowContextConfiguration;
  * <p/>
  * 
  * It will first initializes our {@link AnnotationConfigWebApplicationContext} with the common {@link Configuration}
- * classes: {@link InfrastructureContextConfiguration} and {@link TestDataContextConfiguration} using a typical JEE
+ * classes: {@link RepositoryConfiguration} and {@link TestDataContextConfiguration} using a typical JEE
  * {@link ContextLoaderListener}.
  * <p/>
  * 
@@ -51,8 +52,8 @@ import com.baybora.bookstore.web.config.WebflowContextConfiguration;
  */
 public class BookstoreWebApplicationInitializer implements WebApplicationInitializer {
 
-	private static final Class<?>[] basicConfigurationClasses = new Class<?>[] { TestDataContextConfiguration.class,
-			InfrastructureContextConfiguration.class, };
+	private static final Class<?>[] basicConfigurationClasses = new Class<?>[] {
+			ServiceConfiguration.class, RepositoryConfiguration.class,TestDataContextConfiguration.class};
 
 	private static final String DISPATCHER_SERVLET_NAME = "dispatcher";
 
@@ -62,7 +63,7 @@ public class BookstoreWebApplicationInitializer implements WebApplicationInitial
 		registerDispatcherServlet(servletContext);
 		registerH2Console(servletContext);
 		// We are using JpaFlowExecutionListener instead, but we enable it for Spring MVC served pages
-		//registerOpenEntityManagerInViewFilter(servletContext);
+		registerOpenEntityManagerInViewFilter(servletContext);
 
 	}
 	
@@ -102,6 +103,7 @@ public class BookstoreWebApplicationInitializer implements WebApplicationInitial
 	 */
 	private AnnotationConfigWebApplicationContext createContext(final Class<?>... annotatedClasses) {
 		AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
+		// Registers the application configuration with the root context
 		context.register(annotatedClasses);
 		return context;
 	}
