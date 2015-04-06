@@ -11,7 +11,7 @@
 			<spring:url value="/index.htm" var="home" />
 			<a href="${home}">
 				<spring:url value="/resources/images/logo.gif" var="logo" /> 
-				<img src="${logo}" alt="" title="" border="0" />
+				<img src="${logo }" alt="" title="" border="0" />
 			</a>
 		</div>
 		<div class="nav">
