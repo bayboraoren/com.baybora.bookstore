@@ -12,7 +12,6 @@
 	<description>bookstore-web</description>
 
 <properties>
-    <roo.version>1.1.0.RELEASE</roo.version>
     <spring.version>3.0.5.RELEASE</spring.version>
     <aspectj.version>1.6.10</aspectj.version>
     <slf4j.version>1.6.1</slf4j.version>
@@ -21,6 +20,8 @@
  </properties>
 
 	<dependencies>
+	
+		<!-- SPRING WEB -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
@@ -41,7 +42,7 @@
 
 
 
-
+		<!-- TILES -->
 		<dependency>
 			<groupId>org.apache.tiles</groupId>
 			<artifactId>tiles-api</artifactId>
@@ -67,6 +68,8 @@
 			<artifactId>tiles-template</artifactId>
 			<version>2.2.2</version>
 		</dependency>
+		<!-- /TILES -->
+		
 
 		<dependency>
 			<groupId>org.slf4j</groupId>

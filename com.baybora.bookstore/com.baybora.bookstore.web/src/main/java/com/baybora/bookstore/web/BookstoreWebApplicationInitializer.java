@@ -28,7 +28,7 @@ import com.baybora.bookstore.web.config.WebflowContextConfiguration;
 
 /**
  * {@link WebApplicationInitializer} that will be called by Spring's {@link SpringServletContainerInitializer} as part
- * of the JEE {@link ServletContainerInitializer} pattern. This class will be called on application startup and will
+ * of the JEE {@link ServletContainerInit	ializer} pattern. This class will be called on application startup and will
  * configure our JEE and Spring configuration.
  * <p/>
  * 

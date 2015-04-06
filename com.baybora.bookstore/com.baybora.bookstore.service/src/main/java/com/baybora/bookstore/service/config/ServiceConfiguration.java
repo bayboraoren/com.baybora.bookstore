@@ -9,7 +9,6 @@ import com.baybora.bookstore.repository.config.TestDataContextConfiguration;
 
 @Configuration
 @ComponentScan(basePackages={"com.baybora.bookstore.service"})
-@Import(value={RepositoryConfiguration.class,TestDataContextConfiguration.class})
 public class ServiceConfiguration {
 
 }
